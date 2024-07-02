@@ -1,0 +1,46 @@
+---
+globalThis.counter = 0;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <script src="https://unpkg.com/htmx.org@1"></script>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <title>Counter</title>
+  </head>
+  <body x-data="{ counter: 0}">
+    <div class="container">
+      <div class="sub-container">
+        <h1>Counter Test</h1>
+        <p>by NimiraTech</p>
+        <p>Using Astro, HTMX and Astro</p>
+        <div class="counter" id="counter">{globalThis.counter}</div>
+		<div class="counter" id="alp-counter" x-text="counter"></div>
+		<div>
+		  <button
+			class="counter-btn"
+			x-on:click="counter += 1"
+			hx-post="/api/increment"
+			hx-swap="innerHTML"
+			hx-target="#counter"
+		  >
+			Add
+		  </button>
+		  <button
+			class="counter-btn"
+			x-on:click="counter -= 1"
+			hx-post="/api/decrement"
+			hx-swap="innerHTML"
+			hx-target="#counter"
+		 >
+			Sub
+		 </button>
+		</div> 
+      </div>
+    </div>
+  </body>
+</html>
