@@ -38,13 +38,14 @@ h2 {
     margin-top: 10px;
 }
 
-h1, h2,p {
+h1, h2, p, .htmx {
     text-align: center;
     margin-bottom: 10px;
     color: #ff4500;
 }
 
 .counter,
+.lastSavedCounter,
 .counter-btn {
     display: flex;
     align-items: center;
@@ -52,7 +53,8 @@ h1, h2,p {
     margin:  auto;
 }
 
-.counter {
+.counter,
+.lastSavedCounter{
     margin-top: 20px;
     width: 40px;
     height: 40px;
